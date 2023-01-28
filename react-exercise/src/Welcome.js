@@ -6,7 +6,7 @@ export class Welcome extends React.Component{
             <div>
             {!!this.props.name && <h1>Welcome, {this.props.name}</h1>}
             {!this.props.name && <h1>Welcome, User!</h1>}
-            <span>Your age is : </span><span>{this.props.age}</span>
+            <p>Your age is : {this.props.age}</p>
             </div>
         )
     }
