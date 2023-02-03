@@ -8,4 +8,4 @@ class CounterDisplay extends Component{
     }
 }
 
-export default CounterDisplay
+export default CounterDisplay;
