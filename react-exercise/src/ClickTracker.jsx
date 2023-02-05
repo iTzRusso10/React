@@ -13,14 +13,12 @@ class ClickTracker extends Component{
         console.log(event.target.innerHTML)
     }
 
-    button = document.getElementById(`a`);
-
     render(){
         return(
             <>
             <button onClick={this.tracker}>Click 1</button>
             <button onClick={this.tracker}>Click 2</button>
-            <button onClick={this.tracker} name = "Click 3">Click 3</button>
+            <button onClick={this.tracker}>Click 3</button>
             <h1>Il bottone cliccato è : {this.state.target} </h1>
             </>
         )
