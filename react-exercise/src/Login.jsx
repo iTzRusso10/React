@@ -18,6 +18,14 @@ class Login extends Component {
        })
     }
 
+    reset = () => {
+        this.setState({
+            username: "",
+            password: "",
+            remember: false
+        })
+    }
+
     componentDidUpdate(){
         console.log(this.state)
     }
@@ -30,6 +38,7 @@ class Login extends Component {
                 <input name="password" value={this.state.password} type="password" onChange={this.trackEvent}/>
                 <input name="remember" value={this.state.remember} type="checkbox" onChange={this.trackEvent}/>
                 <button disabled={!this.state.username || !this.state.password} onClick={this.props.onLogin}>Login</button>
+                <button onClick={this.reset}>Reset</button>
             </div>
         )
     }
