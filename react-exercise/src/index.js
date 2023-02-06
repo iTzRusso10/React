@@ -1,12 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Login from './Login';
+import UncontrollatedLogin from './UncontrollatedLogin';
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
-const login = () => {
-    alert("Sei loggato")
-}
 
-
-root.render(<Login onLogin={login}/>)
+root.render(<UncontrollatedLogin />)
