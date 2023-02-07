@@ -30,10 +30,16 @@ export class TodoList extends React.Component{
             items: []
         })
     }
+
+    remove = (index) => {
+        this.setState(state => ({
+            items: state.items.filter((_, z) => z !== index )  
+        }))
+    }
     render(){        
         return(
             <ul>
-                {this.state.items.map((el, index) => <li key={el + index}>{el}</li>)}
+                {this.state.items.map((el, index) => <li key={el + index}>{el}<button onClick={() => this.remove(index)}>Rimuovi</button></li>)}
                 <input ref={input => (this.input = input)}></input>
                 <button onClick={this.addList}>Aggiungi</button>
                 <button onClick={this.reset}>Reset</button>
