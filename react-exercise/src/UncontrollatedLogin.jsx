@@ -22,6 +22,9 @@ class UncontrollatedLogin extends Component{
             this.usernameRef.current.onchange = () => checkingClosure();
             this.passwordRef.current.onchange = () => checkingClosure();
         }
+        
+        this.usernameRef.current.focus()
+        
     }
     handleSubmit = (event) => {
         event.preventDefault()
@@ -36,7 +39,7 @@ class UncontrollatedLogin extends Component{
     render(){
         return(
             <form onSubmit={this.handleSubmit}>
-                <input name="username" ref={this.usernameRef}/>
+                <input name="username" ref={this.usernameRef} />
                 <input name="password" type="password" ref={this.passwordRef}/>
                 <input name="checkbox" type="checkbox" ref={this.checkboxRef} />
                 <button ref={this.submitRef}>Login</button>
