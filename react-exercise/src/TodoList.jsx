@@ -16,6 +16,14 @@ export class TodoList extends React.Component{
             items: state.items.concat(`${value}`)
         }))
     }
+
+    componentDidMount(){
+        this.input.focus()
+    }
+
+    componentDidUpdate(){
+        this.input.value = ""
+    }
     
     render(){        
         return(
