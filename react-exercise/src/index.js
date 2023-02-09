@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Welcome} from './Welcome';
-import './index.css';
+import  Login  from './Login'
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-root.render(<Welcome name="Giuseppe" age="20"/>);
+root.render(<Login />);
