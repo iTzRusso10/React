@@ -7,7 +7,9 @@ class Container extends React.Component {
             border: "1px solid red",
         }
         return (
-            <div style={myStyle}>
+            <div style={myStyle} >
+                {this.props.title}
+                <hr />
                 {this.props.children}
             </div>
         ); 
