@@ -1,24 +1,21 @@
 import { useEffect, useState } from "react"
+import './index.css'
 
-export function GithubUser(){
-    const username  = `Mcsdcs`;
-    const [user, setUser] = useState(username)
+export function GithubUser({usernames = 'iTzRusso10'}){
+    const [user, setUser] = useState('');
 
+    useEffect(() =>  {
+        async function fetchUser(){
+        const {id, login, name, avatar_url,bio} = await (await fetch(`https://api.github.com/users/${usernames}`)).json();
+        setUser({name, id, login, avatar_url, bio});
+    }
+    fetchUser()
+    },[usernames])
 
-useEffect(() =>  {
-    async function fetchUser(){
-    const {id, login, name, avatar_url,bio, message} = await (await fetch(`https://api.github.com/users/${username}`)).json();
-    setUser({name, id, login, avatar_url, bio, message})
-}
-fetchUser()
-},[username])
-
-  if(username === undefined){
-    console.error(`Non trovato`)
-  }
+    
     return(
         <div>
-            <img src={user.avatar_url} alt="Ciao"></img>
+            <img src={user.avatar_url} alt="Ciao" style={{width : '200px'}}></img>
             <h2>{user.name}</h2>
             <p>Id : {user.id}</p>
             <p>Login : {user.login}</p>
