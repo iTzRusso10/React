@@ -4,22 +4,32 @@ import { useState, useEffect } from "react";
 export function ClickCounter(){
     const [counter, setCounter] = useState(0)
 
-   const incrementCounter = () => {
-    setCounter((c) => c +1)
-   }
+    const onChangeCounter = (count) => {
+        console.log(`Il contatore è ${count}`)
+    }
 
-   const onCounterChange = (count) => {
-    console.log(`Il valore corrente è ${count}`)
-   }
-   useEffect(() => {
-    onCounterChange(counter)
-   }, [counter])
+    useEffect(() => {
+        const interval= setInterval(() => {
+                setCounter((c) => c + 1)
+        }, 1000);
+    return () => 
+        clearInterval(interval);
+      },[]);
 
+
+        useEffect(() => {
+            return () => {
+                console.log(`Il counter era ${counter}`)
+            }
+        }, )
+      
+        useEffect(() => {
+            onChangeCounter(counter)
+        })
 
     return(
         <div>
             <h2>Counter: {counter}</h2>
-            <button onClick={incrementCounter}>Incrementa</button>
         </div>
     )
 }
