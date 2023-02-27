@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const GithubUser = () => {
 
@@ -26,7 +26,6 @@ useEffect(() => {
             <img src={user.avatar_url} alt="ProfileImage" style={{width :"200px"}}></img>
             <p>{user.id}</p>
             <p>{user.login}</p>
-            <Link to='/'>Torna alla home</Link>
         </div>
     )
 }
