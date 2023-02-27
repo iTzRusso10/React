@@ -1,8 +1,8 @@
 import { Link, Route, Routes } from "react-router-dom";
-import GithubUserList from "./GitHubList";
-import GithubUser from "./GithubUser";
 import NotFound from "./NotFound";
 import Welcome from "./Welcome";
+import GithubUser from "./GithubUser";
+import GithubUserList from "./GitHubList";
 
 const App = () => {
   return (
@@ -10,8 +10,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Welcome name="Giuseppe" />}></Route>
         <Route path="/users" element={<GithubUserList />}>
-          <Route index element={<h1>Add a user and select it</h1>}></Route>
-          <Route path=":username" element={<GithubUser />}></Route>
+            <Route path=":username" element={<GithubUser />}></Route>
         </Route>
         <Route path="*" element={<NotFound />}></Route>
       </Routes>
