@@ -4,8 +4,7 @@ import useSWR from 'swr'
 const fetcher = async (url) => await(await (fetch(url))).json()
 const GithubUser = () => {
 const {username} = useParams();
-const { data, error } = useSWR(`https://api.github.com/users/${username}`, fetcher)
-
+const { data, error } = useSWR(username ? `https://api.github.com/users/${username}` : null, fetcher)
 
 return(
     <div>
